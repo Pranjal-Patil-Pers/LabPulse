@@ -1,0 +1,26 @@
+[2026-02-15T15:34:14.732+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: labpulse_github_etl.extract_commits manual__2026-02-15T15:24:12.186901+00:00 [queued]>
+[2026-02-15T15:34:14.734+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: labpulse_github_etl.extract_commits manual__2026-02-15T15:24:12.186901+00:00 [queued]>
+[2026-02-15T15:34:14.734+0000] {taskinstance.py:1361} INFO - Starting attempt 3 of 3
+[2026-02-15T15:34:14.737+0000] {taskinstance.py:1382} INFO - Executing <Task(_PythonDecoratedOperator): extract_commits> on 2026-02-15 15:24:12.186901+00:00
+[2026-02-15T15:34:14.739+0000] {standard_task_runner.py:57} INFO - Started process 483 to run task
+[2026-02-15T15:34:14.741+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'labpulse_github_etl', 'extract_commits', 'manual__2026-02-15T15:24:12.186901+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/github_lab_etl.py', '--cfg-path', '/tmp/tmp_e_g9sf6']
+[2026-02-15T15:34:14.741+0000] {standard_task_runner.py:85} INFO - Job 14: Subtask extract_commits
+[2026-02-15T15:34:14.757+0000] {task_command.py:416} INFO - Running <TaskInstance: labpulse_github_etl.extract_commits manual__2026-02-15T15:24:12.186901+00:00 [running]> on host f50935014a2c
+[2026-02-15T15:34:14.780+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='LabPulse' AIRFLOW_CTX_DAG_ID='labpulse_github_etl' AIRFLOW_CTX_TASK_ID='extract_commits' AIRFLOW_CTX_EXECUTION_DATE='2026-02-15T15:24:12.186901+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-15T15:24:12.186901+00:00'
+[2026-02-15T15:34:14.905+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 221, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/github_lab_etl.py", line 37, in extract_commits
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://api.github.com/repos/Pranjal-Patil-Pers/spectral_analysis/commits?since=2026-02-14T15%3A34%3A14.782285
+[2026-02-15T15:34:14.910+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=labpulse_github_etl, task_id=extract_commits, execution_date=20260215T152412, start_date=20260215T153414, end_date=20260215T153414
+[2026-02-15T15:34:14.915+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 14 for task extract_commits (401 Client Error: Unauthorized for url: https://api.github.com/repos/Pranjal-Patil-Pers/spectral_analysis/commits?since=2026-02-14T15%3A34%3A14.782285; 483)
+[2026-02-15T15:34:14.926+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2026-02-15T15:34:14.937+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
