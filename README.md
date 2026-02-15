@@ -38,12 +38,12 @@ labpulse/
 ```
 ---
 ## ⚙️ Setup & Installation
-***1. Prerequisites**
+**1. Prerequisites**
 Docker Desktop installed and running.
 
 GitHub Personal Access Token (PAT) with repo scopes.
 
-***2. Environment Configuration**
+**2. Environment Configuration**
 Create a .env file in the root directory:
 ```text
 @bash
@@ -51,7 +51,7 @@ AIRFLOW_UID=50000
 GITHUB_TOKEN=ghp_your_secret_token_here
 ```
 
-***3. Deployment**
+**3. Deployment**
 Run the following commands in your VS Code terminal:
 ```text
 @bash
@@ -79,7 +79,7 @@ Commit Velocity: Tracking if the pace of a research project (like spectral_analy
 
 ---
 
-##🛡️ Challenges Overcome
+## 🛡️ Challenges Overcome
 API Security: Implemented secure environment variable mapping from Docker to Airflow to protect GitHub credentials.
 
 Container Permissions: Resolved sqlite3.OperationalError by managing volume write-permissions between the host Mac and the Docker container.
