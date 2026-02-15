@@ -49,7 +49,7 @@ Create a .env file in the root directory:
 @bash
 AIRFLOW_UID=50000
 GITHUB_TOKEN=ghp_your_secret_token_here
-```text
+```
 
 ***3. Deployment**
 Run the following commands in your VS Code terminal:
@@ -63,7 +63,7 @@ docker compose up airflow-init
 
 # Start the pipeline
 docker compose up -d
-```text
+```
 Access the Airflow UI at http://localhost:8080 (Default: airflow / airflow).
 
 ---
