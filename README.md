@@ -45,14 +45,17 @@ GitHub Personal Access Token (PAT) with repo scopes.
 
 ***2. Environment Configuration**
 Create a .env file in the root directory:
+```text
 @bash
 AIRFLOW_UID=50000
 GITHUB_TOKEN=ghp_your_secret_token_here
+```text
 
 ***3. Deployment**
 Run the following commands in your VS Code terminal:
+```text
 @bash
-# Set folder permissions (Crucial for SQLite write access on Mac/Linux)
+#Set folder permissions (Crucial for SQLite write access on Mac/Linux)
 chmod -R 777 ./data
 
 # Initialize the Airflow metadata database
@@ -60,7 +63,7 @@ docker compose up airflow-init
 
 # Start the pipeline
 docker compose up -d
-
+```text
 Access the Airflow UI at http://localhost:8080 (Default: airflow / airflow).
 
 ---
