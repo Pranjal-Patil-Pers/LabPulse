@@ -35,6 +35,7 @@ labpulse/
 ├── Dockerfile               # Custom Airflow image with dependencies
 ├── .env                     # Secrets (GitHub Token, Airflow UID)
 └── requirements.txt         # Python dependencies (pandas, requests)
+```
 ---
 ## ⚙️ Setup & Installation
 ***1. Prerequisites**
@@ -61,7 +62,9 @@ docker compose up airflow-init
 docker compose up -d
 
 Access the Airflow UI at http://localhost:8080 (Default: airflow / airflow).
+
 ---
+
 ## 📊 Sample Data Insights
 Once the pipeline is triggered, you can query labpulse.db to view:
 
@@ -70,14 +73,18 @@ Total Commits: Frequency of code updates to specific lab repos.
 Contributor Heatmap: Identifying which researchers are most active.
 
 Commit Velocity: Tracking if the pace of a research project (like spectral_analysis) is increasing.
+
 ---
+
 ##🛡️ Challenges Overcome
 API Security: Implemented secure environment variable mapping from Docker to Airflow to protect GitHub credentials.
 
 Container Permissions: Resolved sqlite3.OperationalError by managing volume write-permissions between the host Mac and the Docker container.
 
 Task Retries: Configured Airflow's retry logic to handle temporary network timeouts and GitHub rate-limiting gracefully.
+
 ---
+
 ## 🔮 Future Enhancements
 [ ] Slack Integration: Send a weekly summary of lab commits to a Slack channel.
 
